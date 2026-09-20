@@ -1,0 +1,262 @@
+/* ==========================================================================
+   PipelineCard Component Styles
+   Card for a single pipeline stage (Lead, Prospect, Approved, Collected).
+   ========================================================================== */
+
+.pipeline-card {
+  flex: 1 1 0;
+  min-width: 0;
+  position: relative;
+  padding: 16px;
+  background: var(--color-bg-base);
+  border-radius: 16px;
+  outline: 1px #F2F2F2 solid;
+  outline-offset: -1px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  cursor: pointer;
+  transition: box-shadow 0.15s ease, outline-color 0.15s ease;
+}
+
+.pipeline-card:hover {
+  outline-color: var(--color-bg-border-solid);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* --- Default content (visible by default, hidden on hover) --- */
+
+.pipeline-card-default {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* --- Top section (header + bar) --- */
+
+.pipeline-card-top {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Header row: stage info (left) + count (right) */
+.pipeline-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+/* Left side: stage name + dots + trend */
+.pipeline-card-stage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pipeline-card-stage-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pipeline-card-stage-name {
+  font-family: var(--font-sans);
+  font-size: var(--heading-sm-plus-size);
+  font-weight: var(--heading-sm-plus-weight);
+  line-height: 19.2px;
+  letter-spacing: var(--heading-sm-plus-tracking);
+  color: var(--color-label-title);
+}
+
+/* 3×3 dot matrix */
+.pipeline-card-dots {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pipeline-card-dots-row {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.pipeline-card-dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 9999px;
+  flex-shrink: 0;
+}
+
+/* Trend: arrow + number + label */
+.pipeline-card-trend {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.pipeline-card-trend-value {
+  font-family: var(--font-sans);
+  font-size: var(--body-xs-size);
+  font-weight: var(--font-weight-medium);
+  line-height: 16.8px;
+  letter-spacing: var(--body-xs-tracking);
+  color: var(--color-control-positive);
+}
+
+.pipeline-card-trend-label {
+  font-family: var(--font-sans);
+  font-size: var(--body-xs-size);
+  font-weight: var(--body-xs-weight);
+  line-height: 16.8px;
+  letter-spacing: var(--body-xs-tracking);
+  color: #535461;
+}
+
+/* Count (right side) */
+.pipeline-card-count {
+  font-family: var(--font-sans);
+  font-size: var(--heading-lg-size);
+  font-weight: var(--heading-lg-weight);
+  line-height: 24px;
+  letter-spacing: var(--heading-lg-tracking);
+  color: var(--color-label-title);
+}
+
+/* --- Sub-stage progress bar --- */
+
+.pipeline-card-bar {
+  width: 100%;
+  height: 9px;
+  display: flex;
+  gap: 3px;
+}
+
+.pipeline-card-bar-seg {
+  height: 100%;
+  border-radius: 2px;
+  min-width: 4px;
+}
+
+/* --- Footer insight --- */
+
+.pipeline-card-insight {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #535461;
+  min-width: 0;
+}
+
+.pipeline-card-insight-text {
+  flex: 1;
+  font-family: var(--font-sans);
+  font-size: var(--body-xs-size);
+  font-weight: var(--body-xs-weight);
+  line-height: 16.8px;
+  letter-spacing: var(--body-xs-tracking);
+  color: #535461;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   Hover Overlay
+   ========================================================================== */
+
+.pipeline-card-hover {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 0;
+  width: 320px;
+  padding: 12px;
+  background: var(--color-bg-base);
+  border-radius: 12px;
+  outline: 1px var(--color-bg-border-solid) solid;
+  outline-offset: -1px;
+  box-shadow: 0 4px 15px -3px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+  z-index: 10;
+}
+
+.pipeline-card:hover .pipeline-card-hover {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Insight banner inside hover */
+.pipeline-card-hover-insight {
+  padding: 6px;
+  background: #F7F7F7;
+  border-radius: 8px;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  color: #535461;
+}
+
+.pipeline-card-hover-insight-text {
+  flex: 1;
+  font-family: var(--font-sans);
+  font-size: var(--body-xs-size);
+  font-weight: var(--body-xs-weight);
+  line-height: 16.8px;
+  letter-spacing: var(--body-xs-tracking);
+  color: #535461;
+}
+
+/* Sub-stage breakdown list */
+.pipeline-card-hover-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+.pipeline-card-hover-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pipeline-card-hover-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pipeline-card-hover-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.pipeline-card-hover-name {
+  font-family: var(--font-sans);
+  font-size: var(--body-rg-size);
+  font-weight: var(--body-rg-weight);
+  line-height: 19.6px;
+  letter-spacing: var(--body-rg-tracking);
+  color: #535461;
+}
+
+.pipeline-card-hover-value {
+  font-family: var(--font-sans);
+  font-size: var(--body-rg-size);
+  font-weight: var(--body-rg-weight);
+  line-height: 19.6px;
+  letter-spacing: var(--body-rg-tracking);
+  color: var(--color-label-title);
+}

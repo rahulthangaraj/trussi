@@ -1,0 +1,225 @@
+/* ==========================================================================
+   LeaderboardTable Component Styles
+   Ranked table for sales leaderboard with header, rows, and "You" row.
+   ========================================================================== */
+
+.leaderboard-table {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Header row --- */
+
+.leaderboard-table-header {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  border-top: 1px solid var(--color-bg-border);
+  border-bottom: 1px solid var(--color-bg-border);
+}
+
+.leaderboard-table-header-cell {
+  font-family: var(--font-sans);
+  font-size: var(--body-xs-size);
+  font-weight: var(--font-weight-medium);
+  line-height: 18px;
+  letter-spacing: 0px;
+  color: var(--color-label-muted);
+  display: flex;
+  align-items: center;
+}
+
+.leaderboard-table-header-cell--rank {
+  width: 56px;
+  padding-left: 20px;
+}
+
+.leaderboard-table-header-cell--name {
+  width: 208px;
+}
+
+.leaderboard-table-header-cell--signed {
+  flex: 1 1 0;
+  justify-content: flex-end;
+}
+
+.leaderboard-table-header-cell--closed {
+  flex: 1 1 0;
+  justify-content: flex-end;
+  padding-right: 20px;
+}
+
+/* --- Data rows --- */
+
+.leaderboard-table-row {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--color-bg-border);
+}
+
+/* "You" row highlight */
+.leaderboard-table-row--you {
+  background: rgba(82, 169, 235, 0.1);
+}
+
+/* --- Cells --- */
+
+.leaderboard-table-cell {
+  display: flex;
+  align-items: center;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.leaderboard-table-cell--rank {
+  width: 56px;
+  padding-left: 20px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: var(--font-weight-regular);
+  line-height: 18.2px;
+  color: var(--color-label-base);
+}
+
+.leaderboard-table-cell--name {
+  width: 208px;
+  gap: 6px;
+  min-width: 0;
+}
+
+.leaderboard-table-cell--signed {
+  flex: 1 1 0;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.leaderboard-table-cell--closed {
+  flex: 1 1 0;
+  justify-content: flex-end;
+  padding-right: 20px;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+/* --- Avatar --- */
+
+.leaderboard-table-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 32px;
+  border: 1px solid var(--color-bg-border-solid);
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+/* --- Name + "You" label --- */
+
+.leaderboard-table-name-group {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+}
+
+.leaderboard-table-name {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: var(--font-weight-regular);
+  line-height: 18.2px;
+  color: var(--color-label-base);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.leaderboard-table-you-dot {
+  width: 2px;
+  height: 2px;
+  background: var(--color-bg-border-solid);
+  border-radius: 9999px;
+  flex-shrink: 0;
+}
+
+.leaderboard-table-you-label {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: var(--font-weight-regular);
+  line-height: 18.2px;
+  color: var(--color-label-muted);
+  flex-shrink: 0;
+}
+
+/* --- Jobs badge --- */
+
+.leaderboard-table-jobs {
+  padding: 2px 4px;
+  background: var(--color-bg-base);
+  border-radius: 6px;
+  outline: 1px solid var(--color-bg-border-solid);
+  outline-offset: -1px;
+  font-family: var(--font-mono);
+  font-size: var(--body-xs-size);
+  font-weight: var(--font-weight-regular);
+  line-height: 12px;
+  color: var(--color-label-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* --- Amount values --- */
+
+.leaderboard-table-amount {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: var(--font-weight-regular);
+  line-height: 18.2px;
+  color: var(--color-label-base);
+}
+
+/* --- Progress hint (e.g. "$300k to top 3") --- */
+
+.leaderboard-table-progress {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.leaderboard-table-progress-ring {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.leaderboard-table-progress-ring svg {
+  width: 12px;
+  height: 12px;
+  display: block;
+  transform: rotate(-90deg);
+}
+
+.leaderboard-table-progress-ring circle {
+  fill: none;
+  stroke-width: 2.5;
+}
+
+.leaderboard-table-progress-ring .ring-bg {
+  stroke: var(--color-bg-border-solid);
+}
+
+.leaderboard-table-progress-ring .ring-fill {
+  stroke: var(--color-supporting-base);
+  transition: stroke-dashoffset 0.3s ease;
+}
+
+.leaderboard-table-progress-label {
+  font-family: var(--font-sans);
+  font-size: var(--body-xs-size);
+  font-weight: var(--font-weight-regular);
+  line-height: 16.8px;
+  color: var(--color-label-muted);
+}

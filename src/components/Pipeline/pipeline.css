@@ -1,0 +1,94 @@
+/* ==========================================================================
+   Pipeline Component Styles
+   Section card: 204px height, 20px padding, 16px gap.
+   ========================================================================== */
+
+.pipeline {
+  width: 100%;
+  padding: 20px;
+  background: var(--color-bg-base-hover);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+/* --- Header row --- */
+
+.pipeline-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pipeline-title {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--heading-rg-plus-size);
+  font-weight: var(--heading-rg-plus-weight);
+  line-height: 21.6px;
+  letter-spacing: var(--heading-rg-plus-tracking);
+  color: var(--color-label-title);
+}
+
+/* --- Actions (badge + button) --- */
+
+.pipeline-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Unassigned badge */
+.pipeline-badge {
+  padding: 6px 8px;
+  background: var(--color-bg-base);
+  border-radius: 6px;
+  outline: 0.5px var(--color-bg-border-solid) solid;
+  outline-offset: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.pipeline-badge-dot {
+  width: 12px;
+  height: 12px;
+  background: var(--color-control-alert-bg);
+  border-radius: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.pipeline-badge-dot-inner {
+  width: 6px;
+  height: 6px;
+  background: var(--color-control-alert);
+  border-radius: 9999px;
+}
+
+.pipeline-badge-text {
+  font-family: var(--font-sans);
+  font-size: var(--body-xs-size);
+  font-weight: var(--body-xs-weight);
+  line-height: 12px;
+  letter-spacing: var(--body-xs-tracking);
+  color: var(--color-label-title);
+  padding: 2px 4px;
+}
+
+/* --- Content area --- */
+
+.pipeline-content {
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  min-width: 0;
+}

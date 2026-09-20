@@ -1,0 +1,39 @@
+/* ==========================================================================
+   App-level styles (built on top of the design system foundation)
+   ========================================================================== */
+
+@import "./foundations.css";
+
+/* --- Legacy app variables (used by the Vite starter App.css) ------------ */
+/* These will be removed once the app is rebuilt with design-system components */
+
+:root {
+  --accent: var(--color-control-base);
+  --accent-bg: var(--color-control-base-bg);
+  --accent-border: var(--color-control-base);
+  --border: var(--color-bg-border-solid);
+  --shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  --social-bg: var(--color-bg-sub);
+  --text-h: var(--color-label-title);
+  --code-bg: var(--color-bg-sub);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --shadow: rgba(0, 0, 0, 0.4) 0 10px 15px -3px,
+      rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+  }
+
+  #social .button-icon {
+    filter: invert(1) brightness(2);
+  }
+}
+
+/* --- App layout --------------------------------------------------------- */
+
+#root {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}

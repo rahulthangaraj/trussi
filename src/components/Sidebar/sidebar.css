@@ -1,0 +1,396 @@
+/* ==========================================================================
+   Sidebar Component Styles
+   Matches Figma spec: 220×832, bg #F7F6F5
+   Supports expanded (220px) and collapsed (52px) states with smooth animation.
+   ========================================================================== */
+
+.sidebar {
+  width: 220px;
+  min-width: 220px;
+  height: 832px;
+  background: var(--color-bg-sub);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: width 0.25s ease, min-width 0.25s ease;
+}
+
+/* --- Top row (collapse button) --- */
+
+.sidebar-top {
+  padding: 12px 0 0 8px;
+  transition: padding 0.25s ease;
+}
+
+/* --- Collapse Button --- */
+
+.sidebar-collapse-btn {
+  all: unset;
+  width: 28px;
+  height: 28px;
+  background: var(--color-bg-sub);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.sidebar-collapse-btn:hover {
+  background: var(--color-bg-sub-hover);
+}
+
+/* --- Logo + Nav wrapper --- */
+
+.sidebar-main {
+  width: 196px;
+  margin-left: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: width 0.25s ease;
+}
+
+/* --- Logo --- */
+
+.sidebar-logo-wrap {
+  width: 196px;
+  height: 28px;
+  padding: 4px 0;
+  display: flex;
+  align-items: center;
+  box-sizing: content-box;
+  overflow: hidden;
+  transition: width 0.25s ease;
+}
+
+.sidebar-logo-inner {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.sidebar-logo-img {
+  flex-shrink: 0;
+}
+
+.sidebar-logo-text {
+  font-family: "SF Pro", var(--font-sans);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+}
+
+.sidebar-logo-text-trussi {
+  color: #1D76BC;
+}
+
+.sidebar-logo-text-dot {
+  color: #125341;
+}
+
+.sidebar-logo-text-ai {
+  color: #F26624;
+}
+
+/* --- Navigation --- */
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sidebar-nav-item {
+  all: unset;
+  display: flex;
+  height: 28px;
+  padding: 0 8px;
+  align-items: center;
+  gap: 6px;
+  align-self: stretch;
+  border-radius: 4px;
+  background: var(--color-bg-sub);
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: background 0.15s ease, border-radius 0.15s ease, padding 0.25s ease,
+    gap 0.25s ease;
+}
+
+.sidebar-nav-item:hover {
+  background: var(--color-bg-sub-hover);
+}
+
+.sidebar-nav-item[data-active="true"] {
+  background: #E6E3E0;
+  border-radius: 8px;
+}
+
+.sidebar-nav-icon {
+  width: 14px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--color-label-title);
+}
+
+.sidebar-nav-label {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18.2px;
+  color: var(--color-label-title);
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 160px;
+  transition: opacity 0.2s ease, max-width 0.25s ease;
+}
+
+/* --- Bottom Section --- */
+
+.sidebar-bottom {
+  width: 220px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transition: width 0.25s ease;
+}
+
+.sidebar-bottom-inner {
+  width: 196px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: width 0.25s ease;
+}
+
+/* --- Product Update Card --- */
+
+.sidebar-update-card {
+  align-self: stretch;
+  padding: 12px;
+  background: #FFFFFF;
+  border-radius: 12px;
+  outline: 0.5px #E8E8E8 solid;
+  outline-offset: -0.5px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 100px;
+  overflow: hidden;
+  transition: opacity 0.2s ease, max-height 0.25s ease, padding 0.25s ease,
+    outline-color 0.2s ease;
+}
+
+.sidebar-update-title {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16.8px;
+  color: #837F7D;
+  white-space: nowrap;
+}
+
+.sidebar-update-text {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18.2px;
+  color: #1E1E2A;
+  white-space: nowrap;
+}
+
+/* --- Bottom Nav (Help, Feedback) --- */
+
+.sidebar-bottom-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar-bottom-nav .sidebar-nav-item {
+  background: transparent;
+}
+
+.sidebar-bottom-nav .sidebar-nav-item:hover {
+  background: var(--color-bg-sub-hover);
+}
+
+/* --- User Profile --- */
+
+.sidebar-profile {
+  align-self: stretch;
+  padding: 8px 12px;
+  background: var(--color-bg-sub);
+  border-top: 1px #E8E8E8 solid;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar-profile-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow: hidden;
+  transition: gap 0.25s ease;
+}
+
+.sidebar-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 56px;
+  border: 1px #F1F1F1 solid;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.04);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.sidebar-avatar-fallback {
+  width: 28px;
+  height: 28px;
+  border-radius: 56px;
+  border: 1px #F1F1F1 solid;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.04);
+  background: linear-gradient(135deg, var(--color-control-base), #e85d1c);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  color: #FFFFFF;
+  flex-shrink: 0;
+}
+
+.sidebar-profile-name {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18.2px;
+  color: #212121;
+  max-width: 94px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: opacity 0.2s ease, max-width 0.25s ease;
+}
+
+.sidebar-profile-menu {
+  all: unset;
+  width: 24px;
+  height: 24px;
+  max-width: 24px;
+  background: var(--color-bg-sub);
+  border-radius: 24px;
+  outline: 1px #E8E8E8 solid;
+  outline-offset: -1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  overflow: hidden;
+  transition: opacity 0.2s ease, max-width 0.25s ease, outline-color 0.2s ease;
+}
+
+.sidebar-profile-menu:hover {
+  background: var(--color-bg-sub-hover);
+}
+
+/* ==========================================================================
+   Collapsed State  (52px = 12px + 28px + 12px)
+   ========================================================================== */
+
+.sidebar[data-collapsed] {
+  width: 52px;
+  min-width: 52px;
+}
+
+/* Shift collapse button to center horizontally: 12px left */
+.sidebar[data-collapsed] .sidebar-top {
+  padding-left: 12px;
+}
+
+/* Shrink main content to icon width */
+.sidebar[data-collapsed] .sidebar-main {
+  width: 28px;
+}
+
+/* Logo: clip to just the icon mark */
+.sidebar[data-collapsed] .sidebar-logo-wrap {
+  width: 28px;
+}
+
+/* Nav items: icon-only, centered */
+.sidebar[data-collapsed] .sidebar-nav-item {
+  position: relative;
+  padding: 0;
+  justify-content: center;
+  gap: 0;
+}
+
+/* Hide labels — position: absolute removes from flex flow entirely */
+.sidebar[data-collapsed] .sidebar-nav-label {
+  position: absolute;
+  width: 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Collapse the product-update card */
+.sidebar[data-collapsed] .sidebar-update-card {
+  opacity: 0;
+  max-height: 0;
+  padding: 0;
+  outline-color: transparent;
+}
+
+/* Shrink bottom section to match */
+.sidebar[data-collapsed] .sidebar-bottom {
+  width: 52px;
+}
+
+.sidebar[data-collapsed] .sidebar-bottom-inner {
+  width: 28px;
+}
+
+/* Bottom nav items: icon-only, centered */
+.sidebar[data-collapsed] .sidebar-bottom-nav .sidebar-nav-item {
+  position: relative;
+  padding: 0;
+  justify-content: center;
+  gap: 0;
+}
+
+/* Hide profile name */
+.sidebar[data-collapsed] .sidebar-profile-name {
+  opacity: 0;
+  max-width: 0;
+  min-width: 0;
+  width: 0;
+}
+
+/* Hide profile menu button */
+.sidebar[data-collapsed] .sidebar-profile-menu {
+  opacity: 0;
+  max-width: 0;
+  min-width: 0;
+  width: 0;
+  outline-color: transparent;
+}
+
+/* Close the gap between avatar and hidden name */
+.sidebar[data-collapsed] .sidebar-profile-left {
+  gap: 0;
+}

@@ -1,0 +1,98 @@
+/* ==========================================================================
+   TopBar Component Styles
+   Height 52px, search centred, action buttons right-aligned.
+   ========================================================================== */
+
+.topbar {
+  display: flex;
+  height: 52px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* --- Search Input --- */
+
+.topbar-search {
+  width: 320px;
+  height: 28px;
+  padding: 0 8px;
+  background: #FBFAF9;
+  border-radius: 16px;
+  outline: 1px #EEECE7 solid;
+  outline-offset: -1px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.topbar-search:hover {
+  outline-color: #C8C5C1;
+}
+
+.topbar-search-text {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14.4px;
+  color: #808080;
+}
+
+/* --- Right Actions --- */
+
+.topbar-right {
+  position: absolute;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.topbar-icon-btn {
+  all: unset;
+  width: 28px;
+  height: 28px;
+  background: #FBFAF9;
+  border-radius: 8px;
+  outline: 1px #EEECE7 solid;
+  outline-offset: -1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.topbar-icon-btn:hover {
+  background: var(--color-bg-sub-hover);
+}
+
+.topbar-ask-btn {
+  all: unset;
+  height: 28px;
+  padding: 4px 8px 4px 6px;
+  background: #FBFAF9;
+  border-radius: 8px;
+  outline: 1px #EEECE7 solid;
+  outline-offset: -1px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.topbar-ask-btn:hover {
+  background: var(--color-bg-sub-hover);
+}
+
+.topbar-ask-text {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18.2px;
+  color: #1F1F1F;
+}

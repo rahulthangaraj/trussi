@@ -1,0 +1,200 @@
+/* ==========================================================================
+   HomePage Styles
+   ========================================================================== */
+
+.homepage {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+/* --- MCP Banner --- */
+
+.mcp-banner {
+  padding: 4px 6px;
+  background: var(--color-bg-base);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.04);
+  border-radius: 32px;
+  outline: 0.5px var(--color-bg-border-solid) solid;
+  outline-offset: -0.5px;
+}
+
+.mcp-banner-inner {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Overlapping logo pair (Claude × Trussi) */
+.mcp-logo {
+  width: 32px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.mcp-banner-text {
+  font-family: var(--font-sans);
+  font-size: var(--body-xs-size);
+  font-weight: var(--font-weight-regular);
+  line-height: 16.8px;
+  color: var(--color-label-title);
+  white-space: nowrap;
+}
+
+.mcp-banner-link {
+  font-family: var(--font-sans);
+  font-size: var(--body-xs-size);
+  font-weight: var(--font-weight-regular);
+  line-height: 24px;
+  color: var(--color-label-link);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.mcp-banner-link:hover {
+  text-decoration: underline;
+}
+
+/* --- Greeting --- */
+
+.homepage-greeting {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.homepage-title {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-28);
+  font-weight: var(--font-weight-regular);
+  line-height: 33.6px;
+  letter-spacing: var(--heading-xl-tracking);
+  color: var(--color-label-title);
+}
+
+.homepage-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.homepage-weather {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.homepage-weather-temp {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-14);
+  font-weight: var(--font-weight-regular);
+  line-height: 19.6px;
+  color: var(--color-label-title);
+}
+
+.homepage-weather-note {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-14);
+  font-weight: var(--font-weight-regular);
+  line-height: 19.6px;
+  color: #59595B;
+}
+
+/* --- Announcement Cards Row --- */
+
+.homepage-cards {
+  width: 100%;
+  display: flex;
+  gap: 12px;
+  margin-top: 12px; /* 12px gap + 12px margin = 24px from greeting */
+}
+
+/* --- Pipeline Section --- */
+
+.homepage > .pipeline {
+  margin-top: 12px; /* 12px gap + 12px margin = 24px from cards */
+}
+
+.homepage-pipeline-cards {
+  width: 100%;
+  display: flex;
+  gap: 12px;
+  min-width: 0;
+}
+
+/* --- Two-Column Section (Needs Review + Sales Leaderboard) --- */
+
+.homepage-two-col {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  margin-top: 12px; /* 12px gap + 12px margin = 24px from pipeline */
+}
+
+/* --- Left column (Needs Review + Collections) --- */
+
+.homepage-left-col {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* --- AI Summary banner --- */
+
+.homepage-ai-summary {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px;
+  background: var(--color-bg-base-hover);
+  border-radius: 8px;
+  margin-top: 16px;
+}
+
+.homepage-ai-summary > span {
+  font-family: var(--font-sans);
+  font-size: var(--body-xs-size);
+  font-weight: var(--body-xs-weight);
+  line-height: 16.8px;
+  letter-spacing: var(--body-xs-tracking);
+  color: var(--color-label-base);
+}
+
+/* --- Sales Leaderboard: spacing between podium and table --- */
+
+.homepage-two-col .leaderboard-table {
+  margin-top: 24px;
+  margin-left: -20px;
+  margin-right: -20px;
+  width: calc(100% + 40px);
+}
+
+/* --- Outstanding table: bleed edge-to-edge inside SectionCard --- */
+
+.homepage-left-col .outstanding-table {
+  margin-left: -20px;
+  margin-right: -20px;
+  width: calc(100% + 40px);
+}
+
+/* --- Needs Review list --- */
+
+.homepage-review-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
+}
+
+.homepage-review-list > .review-item + .review-item {
+  border-top: 1px solid #F2F2F2;
+  margin-top: 8px;
+}

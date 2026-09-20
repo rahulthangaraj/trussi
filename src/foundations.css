@@ -1,0 +1,125 @@
+/* ==========================================================================
+   Trussi Design System — Foundation
+   Single entry point for all design tokens and base element styles.
+
+   Import this file in:
+     • App entry (main.jsx via index.css)
+     • Storybook preview (.storybook/preview.jsx)
+   ========================================================================== */
+
+/* --- Font-face registrations -------------------------------------------- */
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/jetbrains-mono";
+
+/* --- Design tokens ------------------------------------------------------ */
+@import "./tokens/typography.css";
+@import "./tokens/colors.css";
+
+/* =========================================================================
+   Base element styles — applies tokens to raw HTML
+   ========================================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light dark;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--body-rg-size);
+  font-weight: var(--body-rg-weight);
+  line-height: var(--body-rg-line-height);
+  letter-spacing: var(--body-rg-tracking);
+  color: var(--color-label-base);
+  background-color: var(--color-bg-base);
+}
+
+/* --- Headings ----------------------------------------------------------- */
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--color-label-title);
+}
+
+h1 {
+  font-size: var(--heading-xl-plus-size);
+  font-weight: var(--heading-xl-plus-weight);
+  line-height: var(--heading-xl-plus-line-height);
+  letter-spacing: var(--heading-xl-plus-tracking);
+}
+
+h2 {
+  font-size: var(--heading-lg-plus-size);
+  font-weight: var(--heading-lg-plus-weight);
+  line-height: var(--heading-lg-plus-line-height);
+  letter-spacing: var(--heading-lg-plus-tracking);
+}
+
+h3 {
+  font-size: var(--heading-rg-plus-size);
+  font-weight: var(--heading-rg-plus-weight);
+  line-height: var(--heading-rg-plus-line-height);
+  letter-spacing: var(--heading-rg-plus-tracking);
+}
+
+h4 {
+  font-size: var(--heading-sm-plus-size);
+  font-weight: var(--heading-sm-plus-weight);
+  line-height: var(--heading-sm-plus-line-height);
+  letter-spacing: var(--heading-sm-plus-tracking);
+}
+
+/* --- Inline text -------------------------------------------------------- */
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--color-label-link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* --- Code --------------------------------------------------------------- */
+
+code, pre, kbd, samp {
+  font-family: var(--font-mono);
+  font-size: var(--mono-sm-size);
+  font-weight: var(--mono-sm-weight);
+  line-height: var(--mono-sm-line-height);
+  letter-spacing: var(--mono-sm-tracking);
+}
+
+code {
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--color-label-title);
+  background-color: var(--color-bg-sub);
+}
+
+pre code {
+  padding: 0;
+  background-color: transparent;
+}
+
+/* --- Selection ---------------------------------------------------------- */
+
+::selection {
+  background-color: var(--color-control-base-bg);
+  color: var(--color-label-title);
+}

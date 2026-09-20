@@ -1,0 +1,106 @@
+/* ==========================================================================
+   SectionCard Component Styles
+   White card with title + count badge header and flexible body.
+   ========================================================================== */
+
+.section-card {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 20px;
+  background: var(--color-bg-base);
+  border-radius: 16px;
+  outline: 0.5px var(--color-bg-border-solid) solid;
+  outline-offset: -0.5px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* --- Header --- */
+
+.section-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section-card-title-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.section-card-title {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--heading-sm-plus-size);
+  font-weight: var(--heading-sm-plus-weight);
+  line-height: 19.2px;
+  letter-spacing: var(--heading-sm-plus-tracking);
+  color: var(--color-label-title);
+}
+
+.section-card-count {
+  padding: 2px 4px;
+  background: var(--color-bg-base);
+  border-radius: 6px;
+  outline: 1px var(--color-bg-border-solid) solid;
+  outline-offset: -1px;
+  font-family: var(--font-mono);
+  font-size: var(--body-sm-plus-size);
+  font-weight: var(--font-weight-medium);
+  line-height: 15.6px;
+  color: var(--color-label-muted);
+}
+
+/* --- Header actions --- */
+
+.section-card-action {
+  display: flex;
+  align-items: center;
+}
+
+/* "View all" link */
+.section-card-view-all {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-sans);
+  font-size: var(--body-rg-size);
+  font-weight: var(--body-rg-weight);
+  line-height: 24px;
+  color: var(--color-label-link);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.section-card-view-all:hover {
+  text-decoration: underline;
+}
+
+/* Filter icon button */
+.section-card-filter-btn {
+  all: unset;
+  width: 24px;
+  height: 24px;
+  background: var(--color-bg-base);
+  border-radius: 40px;
+  outline: 1px var(--color-bg-border-solid) solid;
+  outline-offset: -1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.section-card-filter-btn:hover {
+  background: var(--color-bg-base-hover);
+}
+
+/* --- Body --- */
+
+.section-card-body {
+  flex: 1;
+  min-height: 0;
+  margin-top: 16px;
+}

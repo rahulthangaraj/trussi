@@ -1,0 +1,60 @@
+/* ==========================================================================
+   Dashboard Layout
+   Sidebar (220px) | Main (TopBar + Content)
+   ========================================================================== */
+
+.dashboard {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background: var(--color-bg-sub);
+  overflow: hidden;
+}
+
+/* Override sidebar fixed Storybook height for full-viewport use */
+.dashboard > .sidebar {
+  height: auto;
+}
+
+/* --- Main area (right of sidebar) --- */
+
+.dashboard-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  padding-right: 12px;
+}
+
+/* --- Content area (white card with rounded top corners) --- */
+
+.dashboard-content {
+  flex: 1;
+  background: #FFFFFF;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  outline: 1px #EEECE7 solid;
+  outline-offset: -1px;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 40px 40px 40px;
+}
+
+/* --- Dotted pattern background --- */
+
+.dashboard-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  pointer-events: none;
+  user-select: none;
+  object-fit: cover;
+  object-position: center top;
+}

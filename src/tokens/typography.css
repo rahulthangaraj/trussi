@@ -1,0 +1,153 @@
+/* ==========================================================================
+   Typography Design Tokens
+   Source: Trussi Design System (Figma)
+   ========================================================================== */
+
+:root {
+  /* ---------------------------------------------------------------------------
+     Font Families
+     --------------------------------------------------------------------------- */
+  --font-sans: "Inter Variable", "SF Pro Display", -apple-system, system-ui,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
+  --font-mono: "JetBrains Mono Variable", "JetBrains Mono", ui-monospace,
+    "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+
+  /* ---------------------------------------------------------------------------
+     Font Weights
+     --------------------------------------------------------------------------- */
+  --font-weight-regular: 400;
+  --font-weight-medium: 450;
+
+  /* ---------------------------------------------------------------------------
+     Font Sizes
+     --------------------------------------------------------------------------- */
+  --font-size-28: 1.75rem; /* 28px */
+  --font-size-20: 1.25rem; /* 20px */
+  --font-size-18: 1.125rem; /* 18px */
+  --font-size-16: 1rem; /* 16px */
+  --font-size-14: 0.875rem; /* 14px */
+  --font-size-13: 0.8125rem; /* 13px */
+  --font-size-12: 0.75rem; /* 12px */
+
+  /* ---------------------------------------------------------------------------
+     Line Heights
+     --------------------------------------------------------------------------- */
+  --line-height-tight: 1.2; /* 120% — all variants */
+
+  /* ---------------------------------------------------------------------------
+     Letter Spacing
+     --------------------------------------------------------------------------- */
+  --letter-spacing-0: 0px;
+  --letter-spacing-tight: -0.24px;
+  --letter-spacing-tighter: -0.32px;
+  --letter-spacing-tightest: -0.5px;
+
+  /* ---------------------------------------------------------------------------
+     Composite Tokens — Headings
+     --------------------------------------------------------------------------- */
+
+  /* heading-xl+ */
+  --heading-xl-plus-size: var(--font-size-28);
+  --heading-xl-plus-weight: var(--font-weight-medium);
+  --heading-xl-plus-line-height: var(--line-height-tight);
+  --heading-xl-plus-tracking: var(--letter-spacing-tightest);
+
+  /* heading-xl */
+  --heading-xl-size: var(--font-size-28);
+  --heading-xl-weight: var(--font-weight-regular);
+  --heading-xl-line-height: var(--line-height-tight);
+  --heading-xl-tracking: var(--letter-spacing-tightest);
+
+  /* heading-lg+ */
+  --heading-lg-plus-size: var(--font-size-20);
+  --heading-lg-plus-weight: var(--font-weight-medium);
+  --heading-lg-plus-line-height: var(--line-height-tight);
+  --heading-lg-plus-tracking: var(--letter-spacing-0);
+
+  /* heading-lg */
+  --heading-lg-size: var(--font-size-20);
+  --heading-lg-weight: var(--font-weight-regular);
+  --heading-lg-line-height: var(--line-height-tight);
+  --heading-lg-tracking: var(--letter-spacing-0);
+
+  /* heading-rg+ */
+  --heading-rg-plus-size: var(--font-size-18);
+  --heading-rg-plus-weight: var(--font-weight-medium);
+  --heading-rg-plus-line-height: var(--line-height-tight);
+  --heading-rg-plus-tracking: var(--letter-spacing-tight);
+
+  /* heading-rg */
+  --heading-rg-size: var(--font-size-18);
+  --heading-rg-weight: var(--font-weight-regular);
+  --heading-rg-line-height: var(--line-height-tight);
+  --heading-rg-tracking: var(--letter-spacing-tight);
+
+  /* heading-sm+ */
+  --heading-sm-plus-size: var(--font-size-16);
+  --heading-sm-plus-weight: var(--font-weight-medium);
+  --heading-sm-plus-line-height: var(--line-height-tight);
+  --heading-sm-plus-tracking: var(--letter-spacing-tighter);
+
+  /* heading-sm */
+  --heading-sm-size: var(--font-size-16);
+  --heading-sm-weight: var(--font-weight-regular);
+  --heading-sm-line-height: var(--line-height-tight);
+  --heading-sm-tracking: var(--letter-spacing-tighter);
+
+  /* ---------------------------------------------------------------------------
+     Composite Tokens — Body
+     --------------------------------------------------------------------------- */
+
+  /* body-rg+ */
+  --body-rg-plus-size: var(--font-size-14);
+  --body-rg-plus-weight: var(--font-weight-medium);
+  --body-rg-plus-line-height: var(--line-height-tight);
+  --body-rg-plus-tracking: var(--letter-spacing-tight);
+
+  /* body-rg */
+  --body-rg-size: var(--font-size-14);
+  --body-rg-weight: var(--font-weight-regular);
+  --body-rg-line-height: var(--line-height-tight);
+  --body-rg-tracking: var(--letter-spacing-tight);
+
+  /* body-sm+ */
+  --body-sm-plus-size: var(--font-size-13);
+  --body-sm-plus-weight: var(--font-weight-medium);
+  --body-sm-plus-line-height: var(--line-height-tight);
+  --body-sm-plus-tracking: var(--letter-spacing-tight);
+
+  /* body-sm */
+  --body-sm-size: var(--font-size-13);
+  --body-sm-weight: var(--font-weight-regular);
+  --body-sm-line-height: var(--line-height-tight);
+  --body-sm-tracking: var(--letter-spacing-tight);
+
+  /* body-xs+ */
+  --body-xs-plus-size: var(--font-size-12);
+  --body-xs-plus-weight: var(--font-weight-medium);
+  --body-xs-plus-line-height: var(--line-height-tight);
+  --body-xs-plus-tracking: var(--letter-spacing-tighter);
+
+  /* body-xs */
+  --body-xs-size: var(--font-size-12);
+  --body-xs-weight: var(--font-weight-regular);
+  --body-xs-line-height: var(--line-height-tight);
+  --body-xs-tracking: var(--letter-spacing-tighter);
+
+  /* ---------------------------------------------------------------------------
+     Composite Tokens — Mono
+     --------------------------------------------------------------------------- */
+
+  /* mono-sm */
+  --mono-sm-size: var(--font-size-14);
+  --mono-sm-weight: var(--font-weight-regular);
+  --mono-sm-line-height: var(--line-height-tight);
+  --mono-sm-tracking: var(--letter-spacing-0);
+
+  /* mono-xs */
+  --mono-xs-size: var(--font-size-13);
+  --mono-xs-weight: var(--font-weight-regular);
+  --mono-xs-line-height: var(--line-height-tight);
+  --mono-xs-tracking: var(--letter-spacing-0);
+}

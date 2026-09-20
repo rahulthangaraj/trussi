@@ -1,0 +1,127 @@
+/* ==========================================================================
+   ReviewItem Component Styles
+   Row item for the Needs Review section.
+   ========================================================================== */
+
+.review-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+  background: var(--color-bg-base);
+  border-radius: 8px;
+}
+
+/* --- Left side: icon + text --- */
+
+.review-item-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+/* Icon box — bg and outline derived from currentColor */
+.review-item-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: color-mix(in srgb, currentColor 8%, transparent);
+  outline: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+  outline-offset: -1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Text block */
+.review-item-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.review-item-title {
+  font-family: var(--font-sans);
+  font-size: var(--body-rg-plus-size);
+  font-weight: var(--body-rg-plus-weight);
+  line-height: 19.6px;
+  letter-spacing: var(--body-rg-plus-tracking);
+  color: var(--color-label-title);
+}
+
+/* Meta row: subtitle • Requested by [avatar] name */
+.review-item-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.review-item-subtitle {
+  font-family: var(--font-sans);
+  font-size: var(--body-sm-size);
+  font-weight: var(--body-sm-weight);
+  line-height: 18.2px;
+  letter-spacing: var(--body-sm-tracking);
+  color: #535461;
+}
+
+.review-item-dot {
+  width: 5px;
+  height: 5px;
+  background: #EAEAE6;
+  border-radius: 9999px;
+  flex-shrink: 0;
+}
+
+/* Requester section */
+.review-item-requester {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.review-item-requester-label {
+  font-family: var(--font-sans);
+  font-size: var(--body-sm-size);
+  font-weight: var(--body-sm-weight);
+  line-height: 18.2px;
+  letter-spacing: var(--body-sm-tracking);
+  color: #535461;
+}
+
+.review-item-requester-user {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.review-item-avatar {
+  width: 16px;
+  height: 16px;
+  background: #E0EEFF;
+  border-radius: 19.2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: var(--font-weight-regular);
+  line-height: 14px;
+  color: #59595B;
+  flex-shrink: 0;
+}
+
+.review-item-requester-name {
+  font-family: var(--font-sans);
+  font-size: var(--body-xs-size);
+  font-weight: var(--body-xs-weight);
+  line-height: 16.8px;
+  letter-spacing: var(--body-xs-tracking);
+  color: #535461;
+}

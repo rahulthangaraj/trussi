@@ -1,0 +1,254 @@
+/* ==========================================================================
+   Button Component Styles
+   Source: Trussi Design System (Figma)
+
+   Variants are driven by data attributes:
+     data-variant = "primary" | "secondary" | "icon-only" | "ghost-icon"
+     data-size    = "small" | "regular" | "large"
+   ========================================================================== */
+
+/* ---------------------------------------------------------------------------
+   Base — shared across all button variants
+   --------------------------------------------------------------------------- */
+
+.button {
+  all: unset;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  overflow: clip;
+  cursor: pointer;
+  position: relative;
+
+  /* Typography: body-xs+ */
+  font-family: var(--font-sans);
+  font-size: var(--body-xs-plus-size);
+  font-weight: var(--body-xs-plus-weight);
+  line-height: var(--body-xs-plus-line-height);
+  letter-spacing: var(--body-xs-plus-tracking);
+  white-space: nowrap;
+
+  /* Transition */
+  transition: background-color 0.15s ease, opacity 0.15s ease, box-shadow 0.15s ease;
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--color-control-base);
+  outline-offset: 2px;
+}
+
+/* ---------------------------------------------------------------------------
+   Label container
+   --------------------------------------------------------------------------- */
+
+.button-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 16px;
+  padding: 2px 4px;
+}
+
+/* ---------------------------------------------------------------------------
+   Icon slots
+   --------------------------------------------------------------------------- */
+
+.button-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+}
+
+.button-icon > svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ---------------------------------------------------------------------------
+   Loader
+   --------------------------------------------------------------------------- */
+
+.button-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  animation: button-spin 0.8s linear infinite;
+}
+
+.button-loader > svg {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes button-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ---------------------------------------------------------------------------
+   Sizes
+   --------------------------------------------------------------------------- */
+
+.button[data-size="small"] {
+  height: 24px;
+  padding: 6px 8px;
+}
+
+.button[data-size="regular"] {
+  padding: 6px 8px;
+}
+
+.button[data-size="large"] {
+  height: 32px;
+  padding: 6px 8px;
+}
+
+/* ---------------------------------------------------------------------------
+   Variant: Primary
+   --------------------------------------------------------------------------- */
+
+.button[data-variant="primary"] {
+  background-color: var(--color-control-base);
+  color: var(--color-label-button);
+  border-radius: 6px;
+  box-shadow:
+    0px 1px 1px 0px rgba(0, 0, 0, 0.04),
+    0px 3px 6px -2px rgba(0, 0, 0, 0.02);
+}
+
+.button[data-variant="primary"]:hover:not(:disabled):not([data-loading="true"]) {
+  background-color: color-mix(in srgb, var(--color-control-base) 92%, black);
+}
+
+.button[data-variant="primary"]:active:not(:disabled):not([data-loading="true"]) {
+  background-color: color-mix(in srgb, var(--color-control-base) 84%, black);
+}
+
+.button[data-variant="primary"]:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* ---------------------------------------------------------------------------
+   Variant: Secondary
+   --------------------------------------------------------------------------- */
+
+.button[data-variant="secondary"] {
+  background-color: var(--color-bg-base);
+  color: var(--color-label-base);
+  border-radius: 6px;
+  box-shadow:
+    0px 0px 0px 0.5px rgba(0, 0, 0, 0.09),
+    0px 3px 6px -2px rgba(0, 0, 0, 0.02),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.04);
+}
+
+.button[data-variant="secondary"]:hover:not(:disabled):not([data-loading="true"]) {
+  background-color: var(--color-bg-base-hover);
+}
+
+.button[data-variant="secondary"]:active:not(:disabled):not([data-loading="true"]) {
+  background-color: var(--color-bg-sub-hover);
+}
+
+.button[data-variant="secondary"]:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: 0px 0px 0px 0.5px rgba(0, 0, 0, 0.09);
+}
+
+/* ---------------------------------------------------------------------------
+   Variant: Icon Only
+   --------------------------------------------------------------------------- */
+
+.button[data-variant="icon-only"] {
+  background-color: var(--color-bg-base);
+  color: var(--color-label-base);
+  border-radius: 54px;
+  box-shadow:
+    0px 0px 0px 0.5px rgba(0, 0, 0, 0.09),
+    0px 3px 6px -2px rgba(0, 0, 0, 0.02),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.04);
+}
+
+.button[data-variant="icon-only"][data-size="small"] {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+}
+
+.button[data-variant="icon-only"][data-size="regular"] {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+}
+
+.button[data-variant="icon-only"][data-size="large"] {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+}
+
+.button[data-variant="icon-only"]:hover:not(:disabled) {
+  background-color: var(--color-bg-base-hover);
+}
+
+.button[data-variant="icon-only"]:active:not(:disabled) {
+  background-color: var(--color-bg-sub-hover);
+}
+
+.button[data-variant="icon-only"]:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: 0px 0px 0px 0.5px rgba(0, 0, 0, 0.09);
+}
+
+/* ---------------------------------------------------------------------------
+   Variant: Ghost Icon
+   --------------------------------------------------------------------------- */
+
+.button[data-variant="ghost-icon"] {
+  background-color: var(--color-bg-base);
+  color: var(--color-label-base);
+  border-radius: 54px;
+}
+
+.button[data-variant="ghost-icon"][data-size="small"] {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+}
+
+.button[data-variant="ghost-icon"][data-size="regular"] {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+}
+
+.button[data-variant="ghost-icon"][data-size="large"] {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+}
+
+.button[data-variant="ghost-icon"]:hover:not(:disabled) {
+  background-color: var(--color-bg-base-hover);
+}
+
+.button[data-variant="ghost-icon"]:active:not(:disabled) {
+  background-color: var(--color-bg-sub-hover);
+}
+
+.button[data-variant="ghost-icon"]:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

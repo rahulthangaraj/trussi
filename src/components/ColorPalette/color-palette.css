@@ -1,0 +1,79 @@
+/* ==========================================================================
+   Color Palette — Storybook swatch display
+   ========================================================================== */
+
+.color-group {
+  margin-bottom: 2rem;
+}
+
+.color-group__title {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-18);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-tight);
+  color: var(--color-label-title);
+  margin: 0 0 1rem;
+}
+
+.color-group__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.swatch {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--color-bg-border-solid);
+  background: var(--color-bg-base);
+}
+
+.swatch__preview {
+  height: 80px;
+  width: 100%;
+}
+
+.swatch__info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 12px;
+}
+
+.swatch__label {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-13);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-label-title);
+}
+
+.swatch__token {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-12);
+  color: var(--color-label-muted);
+  word-break: break-all;
+}
+
+/* ---------------------------------------------------------------------------
+   Interaction swatches need a visible backdrop since they're semi-transparent
+   --------------------------------------------------------------------------- */
+
+.swatch--interaction .swatch__preview {
+  background-image:
+    linear-gradient(45deg, #ccc 25%, transparent 25%),
+    linear-gradient(-45deg, #ccc 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #ccc 75%),
+    linear-gradient(-45deg, transparent 75%, #ccc 75%);
+  background-size: 16px 16px;
+  background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+  position: relative;
+}
+
+.swatch--interaction .swatch__preview::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--_interaction-color);
+}

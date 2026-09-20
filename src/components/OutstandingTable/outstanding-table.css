@@ -1,0 +1,149 @@
+/* ==========================================================================
+   OutstandingTable Component Styles
+   Ranked table for most outstanding collections.
+   ========================================================================== */
+
+.outstanding-table {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Header row --- */
+
+.outstanding-table-header {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  border-top: 1px solid var(--color-bg-border);
+  border-bottom: 1px solid var(--color-bg-border);
+}
+
+.outstanding-table-hcell {
+  font-family: var(--font-sans);
+  font-size: var(--body-xs-size);
+  font-weight: var(--font-weight-medium);
+  line-height: 18px;
+  color: var(--color-label-muted);
+  display: flex;
+  align-items: center;
+}
+
+.outstanding-table-hcell--rank {
+  width: 40px;
+  padding-left: 20px;
+}
+
+.outstanding-table-hcell--project {
+  width: 180px;
+  padding-left: 20px;
+}
+
+.outstanding-table-hcell--count {
+  width: 80px;
+  padding-left: 20px;
+}
+
+.outstanding-table-hcell--amount {
+  flex: 1 1 0;
+  justify-content: flex-end;
+  padding-right: 20px;
+}
+
+/* --- Data rows --- */
+
+.outstanding-table-row {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--color-bg-border);
+}
+
+/* --- Cells --- */
+
+.outstanding-table-cell {
+  display: flex;
+  align-items: center;
+  height: 48px;
+}
+
+.outstanding-table-cell--rank {
+  width: 40px;
+  padding-left: 20px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: var(--font-weight-regular);
+  line-height: 18.2px;
+  color: var(--color-label-base);
+}
+
+.outstanding-table-cell--project {
+  width: 180px;
+  padding-left: 20px;
+  padding-right: 12px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: var(--font-weight-regular);
+  line-height: 18.2px;
+  color: var(--color-label-base);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.outstanding-table-cell--count {
+  width: 80px;
+  padding-left: 20px;
+  padding-right: 12px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: var(--font-weight-regular);
+  line-height: 18.2px;
+  color: var(--color-label-base);
+}
+
+.outstanding-table-cell--amount {
+  flex: 1 1 0;
+  justify-content: flex-end;
+  padding-right: 20px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: var(--font-weight-regular);
+  line-height: 18.2px;
+  color: var(--color-label-base);
+}
+
+/* --- View all footer --- */
+
+.outstanding-table-footer {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  padding-left: 20px;
+  gap: 8px;
+  border-bottom: 1px solid var(--color-bg-border);
+  cursor: pointer;
+}
+
+.outstanding-table-footer:hover {
+  background: var(--color-bg-base-hover);
+}
+
+.outstanding-table-footer-icon {
+  width: 24px;
+  height: 24px;
+  background: var(--color-bg-sub);
+  border-radius: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.outstanding-table-footer-text {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: var(--font-weight-regular);
+  line-height: 18.2px;
+  color: var(--color-label-base);
+}

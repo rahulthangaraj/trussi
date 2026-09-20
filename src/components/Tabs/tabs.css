@@ -1,0 +1,67 @@
+/* ==========================================================================
+   Tabs Component Styles
+   Pill-style tab bar with sliding active indicator.
+   ========================================================================== */
+
+.tabs {
+  position: relative;
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 2px;
+  height: 28px;
+  padding: 2px;
+  background: #F8F8F8;
+  border-radius: 8px;
+  outline: 0.5px #F1F1F1 solid;
+  outline-offset: -0.5px;
+}
+
+/* --- Sliding indicator (behind active tab) --- */
+
+.tabs-indicator {
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  border-radius: 6px;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), #F8F8F8;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.11);
+  transition: left 0.2s ease, width 0.2s ease;
+  pointer-events: none;
+}
+
+/* --- Individual tab --- */
+
+.tabs-tab {
+  all: unset;
+  position: relative;
+  z-index: 1;
+  align-self: stretch;
+  padding: 4px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  cursor: pointer;
+}
+
+.tabs-tab-label {
+  padding: 0 2px;
+  font-family: var(--font-sans);
+  font-size: var(--body-xs-size);
+  font-weight: var(--body-xs-weight);
+  line-height: 12px;
+  letter-spacing: var(--body-xs-tracking);
+  color: var(--color-label-muted);
+  white-space: nowrap;
+}
+
+/* Active tab text */
+.tabs-tab[data-active] .tabs-tab-label {
+  color: var(--color-label-title);
+}
+
+/* Hover on inactive tabs */
+.tabs-tab:not([data-active]):hover {
+  background: var(--color-bg-base);
+  border-radius: 6px;
+}
